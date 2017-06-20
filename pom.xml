@@ -1,0 +1,93 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.openshift</groupId>
+    <artifactId>spring-boot-bom</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>OpenShift.io :: Project :: Bom for Spring-Boot</name>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <properties>
+        <version.io.fabric8.kubernetes-client>2.2.14</version.io.fabric8.kubernetes-client>
+        <version.io.fabric8.openshift-client>2.2.14</version.io.fabric8.openshift-client>
+        <version.io.fabric8.spring-cloud-kubernetes-core>0.1.6</version.io.fabric8.spring-cloud-kubernetes-core>
+        <version.io.fabric8.spring-cloud-starter-kubernetes-netflix>0.1.6</version.io.fabric8.spring-cloud-starter-kubernetes-netflix>
+        <org.springframework.boot.version>1.4.1.RELEASE</org.springframework.boot.version>
+        <version.org.springframework.cloud.spring-cloud-netflix>1.1.6.RELEASE</version.org.springframework.cloud.spring-cloud-netflix>
+        <version.org.apache.tomcat.embed.tomcat-embed-core>8.0.36.redhat-14</version.org.apache.tomcat.embed.tomcat-embed-core>
+        <version.org.apache.tomcat.embed.tomcat-embed-el>8.0.36.redhat-14</version.org.apache.tomcat.embed.tomcat-embed-el>
+        <version.org.apache.tomcat.embed.tomcat-embed-websocket>8.0.36.redhat-14</version.org.apache.tomcat.embed.tomcat-embed-websocket>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- fabric8 -->
+            <dependency>
+                <groupId>io.fabric8</groupId>
+                <artifactId>kubernetes-client</artifactId>
+                <version>${version.io.fabric8.kubernetes-client}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.fabric8</groupId>
+                <artifactId>openshift-client</artifactId>
+                <version>${version.io.fabric8.openshift-client}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.fabric8</groupId>
+                <artifactId>spring-cloud-kubernetes-core</artifactId>
+                <version>${version.io.fabric8.spring-cloud-kubernetes-core}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.fabric8</groupId>
+                <artifactId>spring-cloud-starter-kubernetes-netflix</artifactId>
+                <version>${version.io.fabric8.spring-cloud-starter-kubernetes-netflix}</version>
+            </dependency>
+
+            <!-- SpringBoot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>${org.springframework.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- spring-cloud-netflix -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-ribbon</artifactId>
+                <version>${version.org.springframework.cloud.spring-cloud-netflix}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-hystrix</artifactId>
+                <version>${version.org.springframework.cloud.spring-cloud-netflix}</version>
+            </dependency>
+
+            <!-- Tomcat -->
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-core</artifactId>
+                <version>${version.org.apache.tomcat.embed.tomcat-embed-core}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-el</artifactId>
+                <version>${version.org.apache.tomcat.embed.tomcat-embed-el}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-websocket</artifactId>
+                <version>${version.org.apache.tomcat.embed.tomcat-embed-websocket}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
