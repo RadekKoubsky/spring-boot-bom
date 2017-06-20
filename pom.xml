@@ -20,7 +20,7 @@
         <version.io.fabric8.openshift-client>2.2.14</version.io.fabric8.openshift-client>
         <version.io.fabric8.spring-cloud-kubernetes-core>0.1.6</version.io.fabric8.spring-cloud-kubernetes-core>
         <version.io.fabric8.spring-cloud-starter-kubernetes-netflix>0.1.6</version.io.fabric8.spring-cloud-starter-kubernetes-netflix>
-        <org.springframework.boot.version>1.4.1.RELEASE</org.springframework.boot.version>
+        <version.org.springframework.boot>1.4.1.RELEASE</version.org.springframework.boot>
         <version.org.springframework.cloud.spring-cloud-netflix>1.1.6.RELEASE</version.org.springframework.cloud.spring-cloud-netflix>
         <version.org.apache.tomcat.embed.tomcat-embed-core>8.0.36.redhat-14</version.org.apache.tomcat.embed.tomcat-embed-core>
         <version.org.apache.tomcat.embed.tomcat-embed-el>8.0.36.redhat-14</version.org.apache.tomcat.embed.tomcat-embed-el>
@@ -55,7 +55,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-parent</artifactId>
-                <version>${org.springframework.boot.version}</version>
+                <version>${version.org.springframework.boot}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
